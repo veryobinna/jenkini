@@ -10,5 +10,12 @@ pipeline {
                 '''
             }
         }
+        stage('Deploy') {
+            steps {
+                retry(3) {
+                    sh 'echo "retry thrice"'
+                }
+            }
+        }
     }
 }
