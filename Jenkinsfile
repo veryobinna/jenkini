@@ -9,6 +9,11 @@ pipeline {
                     ls -lah
                 '''
             }
+        },
+        stage('Deploy') {
+            steps {
+                sh 'echo "retry thrice"'
+            }
         }
     }
 }
