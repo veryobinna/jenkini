@@ -8,6 +8,8 @@ pipeline {
                     echo "Multiline shell steps works too"
                     ls -lah
                 '''
+                sh 'whoami'
+                sh 'pwd'
             }
         }
         stage('Deploy') {
@@ -19,7 +21,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'echo "Fail!"; exit 1'
+                sh 'echo "Fail!"'
             }
         }
 
